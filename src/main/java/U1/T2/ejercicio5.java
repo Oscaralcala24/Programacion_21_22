@@ -11,7 +11,6 @@ public class ejercicio5 {
         System.out.println("Introduce temperatura en grados centigrados: ");
         double gradosCentigrados = teclado.nextDouble();
         double gradosFahrenheit = (9*gradosCentigrados/5)+32;
-        System.out.println("aa");
-
+        System.out.println("El resultado en grados Fahrenheit es: "+gradosFahrenheit);
     }
 }
