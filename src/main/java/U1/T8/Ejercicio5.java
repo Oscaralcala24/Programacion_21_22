@@ -15,7 +15,7 @@ public class Ejercicio5 {
         int numeroMaximo = teclado.nextInt();
         System.out.print("Introduce valor dentro del rango: ");
         int numeroRango = teclado.nextInt();
-        while (numeroRango <numeroMinimo || numeroRango>numeroMaximo){
+        while ((numeroRango < numeroMinimo) || (numeroRango > numeroMaximo)){
             System.out.print("Introduce valor dentro del rango: ");
             numeroRango = teclado.nextInt();
         }

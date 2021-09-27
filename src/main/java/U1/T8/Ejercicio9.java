@@ -8,6 +8,20 @@ import java.util.Scanner;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
-        
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce altura del arbol: ");
+        double arbolIntroducido = teclado.nextDouble();
+        double arbolMayorAltura = 0;
+        int contadorArboles = 0;
+        while (arbolIntroducido!=-1){
+            if (arbolIntroducido>arbolMayorAltura){
+                arbolMayorAltura = arbolIntroducido;
+
+            }
+            contadorArboles++;
+            System.out.println("Introduce altura del arbol: ");
+            arbolIntroducido = teclado.nextDouble();
+        }
+        System.out.println("El arbol mas alto es el numero "+contadorArboles+" midiendo "+arbolMayorAltura+" cm");
     }
 }

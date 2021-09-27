@@ -5,12 +5,15 @@ package U1.T8;
 public class Ejercicio7 {
     public static void main(String[] args) {
 
-        int producto = 1;
-        for (int i = 0; i<20 ; i++) {
-           if (i%2!=0){
-               producto=producto*i;
-           }
+        int contadorImpares = 0;
+        int numero = 0;
+
+        while(contadorImpares<10){
+            numero++;
+            if (numero%2!=0){
+                System.out.println(numero);
+                contadorImpares++;
+            }
         }
-        System.out.println(producto);
     }
 }
