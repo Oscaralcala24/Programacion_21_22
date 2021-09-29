@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Ejercicio9 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        System.out.print("Introduce altura de la piramide: ");
+        System.out.print("Introduce altura de la L: ");
         int altura = teclado.nextInt();
         for (int i = 1; i < altura; i++) {
             for (int j = 0; j < 1; j++) {

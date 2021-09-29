@@ -10,7 +10,7 @@ public class Ejercicio7 {
         System.out.println("Introduce un numero:");
         int numeroIntroducido = teclado.nextInt();
         int numeroInvertido = 0;
-        int resto = 0;
+        int resto;
         while (numeroIntroducido>0){
             resto =  numeroIntroducido%10;
             numeroInvertido=numeroInvertido*10+resto;

@@ -11,7 +11,7 @@ public class ejercicio6 {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce el valor de tiempo: ");
         double tiempo = teclado.nextDouble();
-        double gravedad = 9.8;
+        final double gravedad = 9.8;
         double velocidad = gravedad*tiempo;
         if (velocidad>0){
             System.out.println("El resultado es :"+velocidad);

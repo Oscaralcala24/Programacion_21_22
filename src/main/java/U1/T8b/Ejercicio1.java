@@ -21,9 +21,9 @@ public class Ejercicio1 {
             if (contadorIntentos==1){
                 break;
             }
-        if (numeroIntroducido == combinacionSecreta){
-            System.out.println("Numero correcto, caja fuerta abierta!");
-        }
+            if (numeroIntroducido == combinacionSecreta){
+                System.out.println("Numero correcto, caja fuerta abierta!");
+            }
         }
     }
 }

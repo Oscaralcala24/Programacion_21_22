@@ -17,15 +17,16 @@ public class Ejercicio15 {
         int numero = teclado.nextInt();
         int primos = 0;
         int contador =0;
-        for (int i = 1; i <= numero; i++) {
-            if (contador==2){
-                primos++;
-            }
+        for (int i = 0; i <= numero; i++) {
             contador =0;
             for (int j = 1; j <= numero; j++) {
                 if (i%j==0){
                     contador++;
                 }
+            }
+            if (contador==2){
+                primos++;
+                System.out.println(i);
             }
         }
         System.out.println("Resultado del programa: Entre 1 y "+numero+" hay "+primos+" numero primos");

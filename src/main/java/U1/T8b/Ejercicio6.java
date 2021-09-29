@@ -11,29 +11,21 @@ public class Ejercicio6 {
         int altura = teclado.nextInt();
         System.out.print("Introduce caracter de la piramide: ");
         char caracter = teclado.next().charAt(0);
-        for (int i = 1; i < altura; i++) {
-            for (int blancos = 1; blancos < altura-i; blancos++) {
+        for (int i = 0; i < altura; i++) {
+            for (int blancos = 1; blancos < altura - i; blancos++) {
                 System.out.print(" ");
             }
-            for (int j = altura; j <=altura ; j++) {
-                System.out.print(caracter);
-            }
-
-            for (int blancos = altura+1; blancos < altura+i*2; blancos++) {
-                System.out.print("/");
-            }
-            if (i!=0)
-            for (int k = altura; k <= altura; k++) {
-                System.out.print(caracter);
-            }
-            if (i==altura-1){
-                for (int ultimaLinea = 0; ultimaLinea <= i*2; ultimaLinea++) {
+            for (int asteriscos = 0; asteriscos <= i * 2; asteriscos++) {
+                if ((asteriscos == 0) && (i!=0)) {
                     System.out.print(caracter);
+                } else if (asteriscos == (i * 2)){
+                    System.out.println(caracter);
+                }else if (i==altura-1){
+                    System.out.print(caracter);
+                } else {
+                    System.out.print(" ");
                 }
             }
-
-
-            System.out.println();
         }
     }
 }
