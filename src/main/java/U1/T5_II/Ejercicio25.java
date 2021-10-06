@@ -36,7 +36,6 @@ public class Ejercicio25 {
             precioComida = 1;
         }else {
             System.out.print("");
-            if ()
         }
     }
 }
