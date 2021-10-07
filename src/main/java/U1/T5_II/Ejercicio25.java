@@ -27,16 +27,36 @@ import java.util.Scanner;
 public class Ejercicio25 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        System.out.print("¿Qué ha tomado de comer? (palmera, donut o pitufo): ");
-        String comida = teclado.next().toLowerCase();
-        double precioComida = 0;
-        if (comida.equalsIgnoreCase("palmera")){
-            precioComida = 1.40;
-        }else if (comida.equalsIgnoreCase("palmera")){
-            precioComida = 1;
-        }else {
-            System.out.print("");
-            if ()
+        System.out.print("Que has tomado de primero: ");
+        String primerPlato = teclado.next();
+        System.out.print("Que has tomado de beber: ");
+        String bebidaTomada = teclado.next();
+
+        double precioPrimerplato = 0;
+        double precioBebida = 0;
+
+        if (primerPlato.equals("palmera")){
+            precioPrimerplato = 1.40;
+        }else if (primerPlato.equals("donut")) {
+            precioPrimerplato = 1.00;
         }
+
+        if (primerPlato.equals("pitufo")){
+            System.out.print("El pitufo era con aceite o tortilla? ");
+            String escogerPitufo = teclado.next();
+            if (escogerPitufo.equals("tortilla")){
+                precioPrimerplato = 1.20;
+            }else if (escogerPitufo.equals("aceite")){
+                precioPrimerplato = 1.60;
+            }
+        }
+
+        if (bebidaTomada.equals("zumo")){
+            precioBebida = 1.50;
+        }else if (bebidaTomada.equals("café")){
+            precioBebida = 1.20;
+        }
+        System.out.println("El total del desayuno es:"+ (precioPrimerplato + precioBebida));
     }
 }
+
