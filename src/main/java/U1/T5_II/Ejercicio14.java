@@ -12,6 +12,35 @@ public class Ejercicio14 {
         Scanner teclado = new Scanner(System.in);
         System.out.print("Introduce un caracter: ");
         char caracter = teclado.next().charAt(0);
-        System.out.print("Introduce direccion del vertice");
+        System.out.print("Introduce una altura: ");
+        int altura = teclado.nextInt();
+        System.out.print("Introduce direccion del vertice. (arriba, abajo, izquierda, derecha): ");
+        String direccion = teclado.next().toLowerCase();
+        switch (direccion){
+            case "arriba" :
+                for (int i = 0; i < altura; i++) {
+                    for (int blancos = 1; blancos < altura-i; blancos++) {
+                        System.out.print(" ");
+                    }
+                    for (int asteriscos = 0; asteriscos <=i*2; asteriscos++) {
+                        System.out.print(caracter);
+                    }
+                    System.out.println();
+                }
+            case "abajo" :
+                for (int i = 1; i <= altura; i++) {
+                    for (int blancos = 1; blancos < i; blancos++) {
+                        System.out.print(" ");
+                    }
+                    for (int asteriscos = 0; asteriscos <=altura*2-i*2; asteriscos++) {
+                        System.out.print(caracter);
+                    }
+                    System.out.println();
+                }
+            case "izquierda":
+                for (int i = 0; i < ; i++) {
+                    
+                }
+        }
     }
 }
