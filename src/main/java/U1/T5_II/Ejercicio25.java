@@ -29,30 +29,14 @@ public class Ejercicio25 {
         Scanner teclado = new Scanner(System.in);
         System.out.print("¿Qué ha tomado de comer? (palmera, donut o pitufo): ");
         String comida = teclado.next().toLowerCase();
-        double precioComida;
-        double precioBebida;
-         if (comida.equalsIgnoreCase("palmera")){
-            precioComida = 1.4;
-        }else if (comida.equalsIgnoreCase("donut")){
+        double precioComida = 0;
+        if (comida.equalsIgnoreCase("palmera")){
+            precioComida = 1.40;
+        }else if (comida.equalsIgnoreCase("palmera")){
             precioComida = 1;
         }else {
-            System.out.print("¿Con qué se ha tomado el pitufo? (aceite o tortilla): ");
-            String pitufoCon = teclado.next().toLowerCase();
-            if (pitufoCon.equalsIgnoreCase("aceite")){
-                precioComida = 1.2;
-            }else{
-                precioComida = 1.6;
-            }
+            System.out.print("");
+            if ()
         }
-        System.out.print("¿Qué ha tomado de beber? (zumo o café): ");
-        String bebida = teclado.next().toLowerCase();
-        if (bebida.equalsIgnoreCase("zumo")){
-            precioBebida = 1.5;
-        }else {
-            precioBebida = 1.2;
-        }
-        double precioTotal = precioComida+precioBebida;
-        System.out.println("Total : "+precioTotal);
     }
 }
-
