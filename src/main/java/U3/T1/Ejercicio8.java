@@ -16,9 +16,10 @@ public class Ejercicio8 {
         for (int i = 2; i <= numero; i++) {
             boolean esPrimo = true;
             if (numero%i==0){
-                for (int j = 1; j < i ; j++) {
-                    if (i%j==0){
-                        esPrimo=false;
+                for (int j = 2; j < i ; j++) {
+                    if (i % j == 0) {
+                        esPrimo = false;
+                        break;
                     }
                 }
                 if (esPrimo){

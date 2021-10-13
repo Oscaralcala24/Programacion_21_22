@@ -24,6 +24,7 @@ public class Ejercicio2 {
             }
             System.out.println("La suma de las edades es: "+sumaEdad);
             System.out.println("La media es: "+media);
+            System.out.println("Hay: "+contadorAlumnos+" alumnos");
             System.out.println("Mayores de edad son: "+contadorMayores+" alumnos");
             System.out.println("Introduce otra edad: ");
             edad = teclado.nextInt();
