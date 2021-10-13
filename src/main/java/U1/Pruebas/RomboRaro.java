@@ -10,7 +10,7 @@ public class RomboRaro {
         for (int i = anchuraCadena-1; i >= 0; i--) {
             palabraInversa = palabraInversa.concat(String.valueOf(palabra.charAt(i)));
         }
-        String palabraConcatenada = palabra.concat(palabraInversa)
+        String palabraConcatenada = palabra.concat(palabraInversa);
 
 
 
@@ -18,7 +18,9 @@ public class RomboRaro {
             for (int j = 0; j < anchuraCadena*2; j++) {
                 if (j==anchuraCadena-i){
                     System.out.print(palabra.substring(0,i));
-                }else if (i == anchuraCadena+j){
+                }else if (j==anchuraCadena){
+                    System.out.print(palabraInversa.substring(0,anchuraCadena));
+                } else if (i == anchuraCadena+j){
                     System.out.print(palabra.substring(0,anchuraCadena*2-i));
                 }
                 else {
@@ -29,4 +31,5 @@ public class RomboRaro {
             System.out.println();
         }
     }
+
 }
