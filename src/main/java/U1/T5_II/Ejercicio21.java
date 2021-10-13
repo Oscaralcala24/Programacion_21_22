@@ -41,31 +41,31 @@ public class Ejercicio21 {
         int visitas = teclado.nextInt();
         System.out.print("Introduzca su estado civil \n (1 - Soltero\n 2 - Casado):");
         int  estadoCivil = teclado.nextInt();
-        int sueldoBase = 0;
-        int pagasExtras = visitas*30;
-        int sueldoNeto = 0;
+        double sueldoBase = 0;
+        double pagasExtras = visitas*30;
+        double sueldoNeto = 0;
         switch (cargo){
             case 1:
                 sueldoBase = 950;
                 if (estadoCivil==1){
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
+                    sueldoNeto =((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
                 }else {
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
+                    sueldoNeto =((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
                 }break;
 
             case 2:
                 sueldoBase = 1200;
                 if (estadoCivil==1){
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
+                    sueldoNeto =((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
                 }else {
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
+                    sueldoNeto =((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
                 }break;
             case 3:
                 sueldoBase = 1600;
                 if (estadoCivil==1){
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
+                    sueldoNeto = ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.25));
                 }else {
-                    sueldoNeto = (int) ((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
+                    sueldoNeto =((sueldoBase+pagasExtras)-((sueldoBase+pagasExtras)*0.20));
                 }break;
         }
         System.out.println("Sueldo neto: "+sueldoNeto);
