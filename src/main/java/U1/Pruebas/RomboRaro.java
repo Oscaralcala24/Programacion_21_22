@@ -7,23 +7,27 @@ public class RomboRaro {
         String palabra = "PEPITO";
         String palabraInversa = "";
         int anchuraCadena = palabra.length();
-        for (int i = anchuraCadena-1; i >= 0; i--) {
+        for (int i = anchuraCadena-2; i >= 0; i--) {
             palabraInversa = palabraInversa.concat(String.valueOf(palabra.charAt(i)));
         }
-        String palabraConcatenada = palabra.concat(palabraInversa);
+        int anchuraCadenaInversa = palabraInversa.length();
 
 
 
         for (int i = 0; i < anchuraCadena*2; i++) {
             for (int j = 0; j < anchuraCadena*2; j++) {
                 if (j==anchuraCadena-i){
-                    System.out.print(palabra.substring(0,i));
+                    for (int k = 0; k < i; k++) {
+                        System.out.print(palabra.charAt(k));
+                        j+=k;
+                    }
                 }else if (j==anchuraCadena){
-                    System.out.print(palabraInversa.substring(0,anchuraCadena));
-                } else if (i == anchuraCadena+j){
-                    System.out.print(palabra.substring(0,anchuraCadena*2-i));
-                }
-                else {
+                    for (int k = anchuraCadenaInversa; k > 0; k--) {
+                        for (int l = k; l < anchuraCadena; l++) {
+                            System.out.print(palabraInversa.charAt(l));
+                        }
+                    }
+                } else {
                     System.out.print(" ");
                 }
 
