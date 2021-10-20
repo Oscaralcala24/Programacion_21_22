@@ -22,7 +22,6 @@ public class Ejercicio7 {
             System.out.println("Acertaste");
         }else{
             for (int i = 0; i < anchuraContrasena; i++) {
-                menor = false;
                 int asciiContrasena = contrasena.charAt(i);
                 int asciiIntento = intentoAdivinar.charAt(i);
                 if (contrasena.equals(intentoAdivinar)){
