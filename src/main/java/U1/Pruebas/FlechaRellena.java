@@ -15,15 +15,18 @@ public class FlechaRellena {
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < altura*2; j++) {
                 if (i<=altura/2){
-                    if ((j >= altura - i) && (j<=altura)){
+                    if ((j >= altura/2 - i) && (j<=altura/2)){
                         System.out.print("*");
-                    }else if ((i==altura/2) && (j >= altura - i)){
+                    }else if ((i==altura/2) && (j>altura/2) && (j<=altura/2+5)){
+                        System.out.print("*");
+                    }
+                    else if ((i==altura/2) && (j >= altura/2 - i)){
                         System.out.print("*");
                     } else{
                         System.out.print(" ");
                     }
                 }else{
-                    if ((i+4<= altura/2 +j) && (j<=altura)){
+                    if ((i<= altura/2 +j) && (j<=altura/2)){
                         System.out.print("*");
                     }else{
                         System.out.print(" ");

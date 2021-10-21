@@ -12,11 +12,11 @@ public class Ejercicio10 {
         System.out.print("Introduce altura de U: ");
         int altura = teclado.nextInt();
         for (int i = 0; i < altura; i++) {
-            for (int j = 1; j <= altura; j++) {
+            for (int j = 1; j <= altura*2; j++) {
                 if (i != altura - 1) {
                     if (j == 1) {
                         System.out.print("*");
-                    } else if (j == altura) {
+                    } else if (j == altura*2) {
                         System.out.print("*");
                     } else {
                         System.out.print(" ");
@@ -24,7 +24,7 @@ public class Ejercicio10 {
                 } else {
                     if (j == 1) {
                         System.out.print(" ");
-                    } else if (j == altura ) {
+                    } else if (j == altura*2 ) {
                         System.out.print(" ");
                     } else {
                         System.out.print("*");
