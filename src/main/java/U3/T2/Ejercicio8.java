@@ -19,29 +19,20 @@ public class Ejercicio8 {
         int anchuraDialecto1 = dialecto1.length();
         int anchuraDialecto2 = dialecto2.length();
         int anchuraFraseIntroducida = fraseIntroducida.length();
-        String principioFrase = "";
-        String finalFrase = "";
-        String sinMuletillas = "";
-        if ((anchuraFraseIntroducida>anchuraDialecto1) || (anchuraFraseIntroducida>anchuraDialecto2)){
-            for (int i = 0; i < anchuraDialecto1; i++) {
-                principioFrase = principioFrase + fraseIntroducida.charAt(i);
-            }
-            for (int i = anchuraDialecto2; i < anchuraFraseIntroducida; i++) {
-                finalFrase = finalFrase + fraseIntroducida.charAt(i);
-            }
-        }
-
-        if (principioFrase.equalsIgnoreCase(dialecto1) || finalFrase.equalsIgnoreCase(dialecto2)){
-            System.out.println("Esta escrito en idioma de Javalandia");
-
-            if (principioFrase.equalsIgnoreCase(dialecto1)){
-                System.out.print(fraseIntroducida.trim().substring(anchuraDialecto1,anchuraFraseIntroducida));;
+        if ((anchuraFraseIntroducida>anchuraDialecto2) || (anchuraFraseIntroducida>anchuraDialecto1)){
+            if (dialecto1.equalsIgnoreCase(fraseIntroducida.substring(0,anchuraDialecto1))){
+                System.out.println("Esta escrito en idioma de javalandia");
+                System.out.println(fraseIntroducida.substring(anchuraDialecto1,anchuraFraseIntroducida).trim());
+            }else if (dialecto2.equalsIgnoreCase(fraseIntroducida.substring(anchuraFraseIntroducida-anchuraDialecto2,anchuraFraseIntroducida))){
+                System.out.println("Esta escrito en idioma de javalandia");
+                System.out.println(fraseIntroducida.substring(0,anchuraFraseIntroducida-anchuraDialecto2).trim());
             }else {
-                System.out.print(fraseIntroducida.trim().substring(anchuraFraseIntroducida-anchuraDialecto2+1,anchuraFraseIntroducida));
+                System.out.println("No esta escrito en idioma de javalandia");
+                System.out.println(fraseIntroducida);
             }
         }else {
-            System.out.print("No esta escrito en idioma de Javalandia");
+            System.out.println("No esta escrito en idioma de javalandia");
+            System.out.println(fraseIntroducida);
         }
-
     }
 }
