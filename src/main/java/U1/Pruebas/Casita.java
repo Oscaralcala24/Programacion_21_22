@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Casita {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int altura = 15;
+        int altura = 7;
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < altura; j++) {
                if (i<=altura/2){
