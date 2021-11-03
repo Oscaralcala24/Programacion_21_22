@@ -11,17 +11,20 @@ public class Ejercicio2 {
         int numeroIntroducido1 = sc.nextInt();
         System.out.print("Introduce segundo numero: ");
         int numeroIntroducido2 = sc.nextInt();
-        numerosComprendidos(numeroIntroducido1,numeroIntroducido2);
+        mayorMenor(numeroIntroducido1,numeroIntroducido2);
     }
-    static void numerosComprendidos(int numero1, int numero2){
+
+    static void mayorMenor(int numero1, int numero2){
         if (numero1>numero2){
-            for (int i = numero2; i <= numero1 ; i++) {
-                System.out.println(i);
-            }
+            numerosComprendidos(numero1,numero2);
         }else {
-            for (int i = numero1; i <=numero2 ; i++) {
-                System.out.println(i);
-            }
+            numerosComprendidos(numero2,numero1);
+        }
+    }
+
+    private static void numerosComprendidos(int num1, int num2) {
+        for (int i = num2; i <= num1 ; i++) {
+            System.out.println(i);
         }
     }
 }
