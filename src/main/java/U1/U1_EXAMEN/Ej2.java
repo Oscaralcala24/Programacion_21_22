@@ -1,4 +1,4 @@
-package U1.Alcala_Espigares_U1_EXAMEN;
+package U1.U1_EXAMEN;
 
 import java.util.Scanner;
 
