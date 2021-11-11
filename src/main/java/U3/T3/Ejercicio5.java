@@ -8,20 +8,38 @@ package U3.T3;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ejercicio5 {
     public static void main(String[] args) {
-        int [] primerArray = {6,3,2,9,7,8};
-        int [] primerArray2 = {2,4,6,4,7,1};
-        int [] arrayOrdenado = new int[6];
+        Scanner teclado = new Scanner(System.in);
 
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < primerArray.length; j++) {
-                if (i == primerArray[i]){
-                    arrayOrdenado[j] = i;
+        int []primerArray = {2,4,5,9,2,7};
+        int []segundoArray = {8,3,2,7,1,3};
+        int []arrayOrdenado = new int [primerArray.length + segundoArray.length];
+        System.arraycopy(primerArray,0,arrayOrdenado,0,primerArray.length);
+        System.arraycopy(segundoArray,0,arrayOrdenado,segundoArray.length,segundoArray.length);
+        ordenarArrays(primerArray);
+        ordenarArrays(segundoArray);
+        ordenarArrays(arrayOrdenado);
+    }
+
+    private static void ordenarArrays(int[] arrays) {
+        boolean ordenado = false;
+        while (ordenado == false){
+            int contadorCambios = 0;
+            for (int i = 0; i < arrays.length-1; i++) {
+                if (arrays[i] > arrays[i+1]){
+                    int numAUX = arrays[i];
+                    arrays[i] = arrays[i+1];
+                    arrays[i+1] = numAUX;
+                    contadorCambios ++;
                 }
             }
-            System.out.println(arrayOrdenado);
+            if (contadorCambios == 0){
+                ordenado = true;
+            }
         }
+        System.out.println(Arrays.toString(arrays));
     }
 }
