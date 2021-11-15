@@ -16,6 +16,9 @@ public class EjercicioFuncionString {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce un numero: ");
         long n = sc.nextLong();
+        String n1 = "hola";
+        n1 = "aaa";
+        System.out.println(n1);
         String numeroString = String.valueOf(n);
         int anchuraNumero = numeroString.length();
         convierteEnPalabras( numeroString, anchuraNumero);
