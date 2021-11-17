@@ -61,14 +61,14 @@ public class Ejercicio1 {
     }
 
     private static String getStringAsteriscos(int[] array500, int numAux) {
-        String arrayAsteriscos = "";
-        for (int i = 0; i < array500.length; i++) {
-            if (array500[i] == numAux){
-                arrayAsteriscos = arrayAsteriscos+"**"+ array500[i]+"**"+", " ;
-            }else {
-                arrayAsteriscos = arrayAsteriscos+ array500[i]+ ", ";
+        String arrayAsteriscos = "[";
+        for (int j : array500) {
+            if (j == numAux) {
+                arrayAsteriscos = arrayAsteriscos + "**" + j + "**" + ", ";
+            } else {
+                arrayAsteriscos = arrayAsteriscos + j + ", ";
             }
         }
-        return arrayAsteriscos;
+        return arrayAsteriscos + "]";
     }
 }
