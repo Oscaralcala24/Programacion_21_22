@@ -5,6 +5,7 @@ package U3.T4;
 // Como se indica en la figura, el alfil se mueve siempre en diagonal. El tablero cuenta con 64 casillas.
 // Las columnas se indican con las letras de la a a la h y las filas se indican del 1 al 8.
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio4 {
@@ -12,58 +13,66 @@ public class Ejercicio4 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca la posicion del alfil: ");
         String posicionAlfil = sc.nextLine();
-        int[][] tablero = new int[8][8];
+        String[][] tablero = new String[8][8];
         rellenatablero(tablero);
         int fila = getFila(posicionAlfil);
         int columna = Integer.parseInt(posicionAlfil.substring(1));
-        String movimientosPosibles = "";
         System.out.println("El alfil puede moverse a las siguientes posiciones: ");
-        comprobarArribaDerecha(fila, columna,movimientosPosibles,posicionAlfil);
+        comprobarArribaDerecha(fila, columna,posicionAlfil);
         System.out.println();
-        comprobarArribaIzquierda (fila,columna,movimientosPosibles,posicionAlfil);
+        comprobarArribaIzquierda (fila,columna,posicionAlfil);
         System.out.println();
-        comprobarAbajoDerecha (fila,columna,movimientosPosibles,posicionAlfil);
+        comprobarAbajoDerecha (fila,columna,posicionAlfil);
         System.out.println();
-        comprobarAbajoIzquierda (fila,columna,movimientosPosibles,posicionAlfil);
+        comprobarAbajoIzquierda (fila,columna,posicionAlfil);
+        System.out.println();
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
 
-
-    }
-
-    private static void comprobarAbajoIzquierda(int fila, int columna, String movimientosPosibles, String posicionAlfil) {
-        movimientosPosibles = "";
-        if ((fila >= 1) && (fila <= 8 ) && (columna >= 1 ) && (columna <= 8)){
-            movimientosPosibles = movimientosPosibles +getFilaLetra(fila)+columna;
-            comprobarAbajoDerecha(fila-1, columna-1, movimientosPosibles,".");
+                System.out.print(" | "+tablero[i][j]+ " | ");
+            }
+            System.out.println();
         }
-        System.out.print(movimientosPosibles+" ");
+
     }
 
-    private static void comprobarAbajoDerecha(int fila, int columna, String movimientosPosibles, String posicionAlfil) {
-        movimientosPosibles = "";
+    private static void comprobarAbajoIzquierda(int fila, int columna, String posicionAlfil) {
         if ((fila >= 1) && (fila <= 8 ) && (columna >= 1 ) && (columna <= 8)){
-            movimientosPosibles = movimientosPosibles +getFilaLetra(fila)+columna;
-            comprobarAbajoDerecha(fila-1, columna+1, movimientosPosibles, ".");
+            if (!posicionAlfil.equalsIgnoreCase(getFilaLetra(fila)+columna)){
+                System.out.print(getFilaLetra(fila)+columna+" ");
+            }
+            comprobarAbajoDerecha(fila-1, columna-1,".");
         }
-        System.out.print(movimientosPosibles+" ");
     }
 
-    private static void comprobarArribaIzquierda(int fila, int columna, String movimientosPosibles, String posicionAlfil) {
-        movimientosPosibles = "";
+    private static void comprobarAbajoDerecha(int fila, int columna, String posicionAlfil) {
         if ((fila >= 1) && (fila <= 8 ) && (columna >= 1 ) && (columna <= 8)){
-            movimientosPosibles = movimientosPosibles +getFilaLetra(fila)+columna;
-            comprobarArribaIzquierda(fila+1, columna-1, movimientosPosibles, ".");
+            if (!posicionAlfil.equalsIgnoreCase(getFilaLetra(fila)+columna)){
+                System.out.print(getFilaLetra(fila)+columna+" ");
+            }
+            comprobarAbajoDerecha(fila-1, columna+1, ".");
         }
-        System.out.print(movimientosPosibles+" ");
 
     }
 
-    private static void comprobarArribaDerecha(int fila, int columna, String movimientosPosibles, String posicionAlfil) {
-        movimientosPosibles = "";
+    private static void comprobarArribaIzquierda(int fila, int columna, String posicionAlfil) {
+        if ((fila >= 1) && (fila <= 8 ) && (columna >= 1 ) && (columna <= 8)){
+            if (!posicionAlfil.equalsIgnoreCase(getFilaLetra(fila)+columna)){
+                System.out.print(getFilaLetra(fila)+columna+" ");
+            }
+            comprobarArribaIzquierda(fila+1, columna-1, ".");
+        }
+
+    }
+
+    private static void comprobarArribaDerecha(int fila, int columna, String posicionAlfil) {
         if ((fila >= 1) && (fila <= 8 ) && (columna >= 1 ) && (columna <= 8)) {
-            movimientosPosibles = movimientosPosibles +getFilaLetra(fila)+columna;
-            comprobarArribaDerecha(fila+1, columna+1, movimientosPosibles, ".");
+            if (!posicionAlfil.equalsIgnoreCase(getFilaLetra(fila)+columna)){
+                System.out.print(getFilaLetra(fila)+columna+" ");
+            }
+            comprobarArribaDerecha(fila+1, columna+1, ".");
         }
-        System.out.print(movimientosPosibles+" ");
+
 
 }
 
@@ -96,11 +105,13 @@ public class Ejercicio4 {
         return columnaDevolverLetra;
     }
 
-    private static void rellenatablero(int[][] tablero) {
+    private static void rellenatablero(String[][] tablero) {
+        int contadorTablero = 7;
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                tablero[i][j]= j+1;
+                tablero[contadorTablero][j] = getFilaLetra(j+1)+(i+1);
             }
+            contadorTablero--;
         }
     }
 }

@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class Ejercicio6 {
     public static void main(String[] args) {
-        int [] sinRepetidos = {2,2,5,6,7,5,8};
+        int [] sinRepetidos = {2,2,5,6,9,9,8};
         ;
         System.out.println(Arrays.toString(sinRepetidos(sinRepetidos)));
     }
