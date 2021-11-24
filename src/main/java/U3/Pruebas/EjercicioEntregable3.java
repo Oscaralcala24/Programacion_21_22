@@ -24,9 +24,7 @@ public class EjercicioEntregable3 {
     private static int[][] girarArray(int[][] arrayAux, int[][] tablaAleatoria) {
         for (int i = 0; i < arrayAux.length; i++) {
             for (int j = 0; j < arrayAux[i].length; j++) {
-                for (int k = 0; k < arrayAux.length; k++) {
-                    arrayAux[j][arrayAux.length-k-1] = tablaAleatoria[k][j];
-                }
+                    arrayAux[j][arrayAux.length-i-1] = tablaAleatoria[i][j];
             }
         }
         return arrayAux;
