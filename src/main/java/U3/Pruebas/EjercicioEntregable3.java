@@ -33,7 +33,7 @@ public class EjercicioEntregable3 {
     private static void mostrarTabla(int[][] tablaAleatoria) {
         for (int i = 0; i < tablaAleatoria.length; i++) {
             for (int j = 0; j < tablaAleatoria[i].length; j++) {
-                System.out.print(" | "+ tablaAleatoria[i][j]+" | ");
+                System.out.print(" | "+ tablaAleatoria[i][j] +" | ");
             }
             System.out.println();
         }
