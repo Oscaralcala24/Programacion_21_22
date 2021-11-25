@@ -54,7 +54,7 @@ public class EjercicioEntregable4 {
                         || (i == fila+1 && j == columna) || (i == fila+1 && j == columna+1)) {
                     if (buscaminas[i][j].equals('X')){
                         contadorBombas++;
-                        break;
+
                     }
 
                 }
@@ -66,7 +66,7 @@ public class EjercicioEntregable4 {
     private static void mostrarTablero(Character[][] buscaminas) {
         for (int i = 0; i < buscaminas.length; i++) {
             for (int j = 0; j < buscaminas.length; j++) {
-                System.out.print(buscaminas[i][j]);
+                System.out.print(" | "+buscaminas[i][j]+" | ");
             }
             System.out.println();
         }
