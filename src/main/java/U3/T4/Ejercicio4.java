@@ -41,7 +41,7 @@ public class Ejercicio4 {
             if (!posicionAlfil.equalsIgnoreCase(getFilaLetra(fila)+columna)){
                 System.out.print(getFilaLetra(fila)+columna+" ");
             }
-            comprobarAbajoDerecha(fila-1, columna-1,".");
+            comprobarAbajoIzquierda(fila-1, columna-1,".");
         }
     }
 
