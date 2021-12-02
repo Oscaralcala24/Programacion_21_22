@@ -31,18 +31,70 @@ public class ej3_2021_MANANA_AZUL {
 
     private static boolean jaque(String posRey, String posReina) {
         boolean esJaque = false;
-        int numeroFilaReina = Integer.parseInt(String.valueOf(posReina.substring(0,1)));
-        int numeroColumnaReina = Integer.parseInt((posReina.substring(1,2)));
-        int numeroFilaRey = Integer.parseInt(String.valueOf(posRey.substring(0,1)));
-        int numeroColumnaRey = Integer.parseInt((posRey.substring(1,2)));
-        int jaque = 0;
-        comprobarMovimiento(numeroFilaReina,numeroColumnaReina,numeroColumnaRey,numeroFilaRey,jaque))
-
+        String letras = "abcdefgh";
+        int numeroFilaReina = Integer.parseInt(posReina.substring(1));;
+        int numeroColumnaReina = letras.indexOf(posReina.charAt(0)+1);
+        int numeroFilaRey = Integer.parseInt(posRey.substring(1));
+        int numeroColumnaRey = letras.indexOf(posRey.charAt(0)+1);
+        if (numeroFilaReina == numeroFilaRey || numeroColumnaReina == numeroColumnaRey ||
+                comprobarArribaIzquierda(numeroFilaReina,numeroFilaRey, numeroColumnaRey, numeroColumnaReina) ||
+                comprobarArribaDerecha(numeroFilaReina,numeroFilaRey, numeroColumnaRey, numeroColumnaReina)  ||
+                comprobarAbajoIzquierda(numeroFilaReina,numeroFilaRey, numeroColumnaRey, numeroColumnaReina) ||
+                comprobarAbajoDerecha(numeroFilaReina,numeroFilaRey, numeroColumnaRey, numeroColumnaReina)
+        ){
+            esJaque = true;
+        }
+        return esJaque;
     }
 
-    private static int comprobarMovimiento(int numeroFilaReina, int numeroColumnaReina, int numeroColumnaRey, int numeroFilaRey, int jaque) {
-        if (co)
+    private static boolean comprobarAbajoDerecha(int numeroFilaReina, int numeroFilaRey, int numeroColumnaRey, int numeroColumnaReina) {
+        boolean jaque = false;
+        if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
+            if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
+                jaque = true;
+            }else{
+                jaque = comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1);
+            }
+        }
+        return jaque;
     }
+
+    private static boolean comprobarAbajoIzquierda(int numeroFilaReina, int numeroFilaRey, int numeroColumnaRey, int numeroColumnaReina) {
+        boolean jaque = false;
+        if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
+            if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
+                jaque = true;
+            }else{
+                jaque = comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1);
+            }
+        }
+        return jaque;
+    }
+
+    private static boolean comprobarArribaDerecha(int numeroFilaReina, int numeroFilaRey, int numeroColumnaRey, int numeroColumnaReina) {
+        boolean jaque = false;
+        if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
+            if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
+                jaque = true;
+            }else{
+                jaque = comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1);
+            }
+        }
+        return jaque;
+    }
+
+    private static boolean comprobarArribaIzquierda(int numeroFilaReina, int numeroFilaRey, int numeroColumnaRey, int numeroColumnaReina) {
+        boolean jaque = false;
+        if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
+            if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
+                jaque = true;
+            }else{
+                jaque = comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1);
+            }
+        }
+        return jaque;
+    }
+
 
     private static void rellenarAjedrez(String[][] ajedrez) {
         String letras = "abcdefgh";
