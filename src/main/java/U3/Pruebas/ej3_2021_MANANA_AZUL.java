@@ -32,7 +32,7 @@ public class ej3_2021_MANANA_AZUL {
     private static boolean jaque(String posRey, String posReina) {
         boolean esJaque = false;
         String letras = "abcdefgh";
-        int numeroFilaReina = Integer.parseInt(posReina.substring(1));;
+        int numeroFilaReina = Integer.parseInt(posReina.substring(1));
         int numeroColumnaReina = letras.indexOf(posReina.charAt(0)+1);
         int numeroFilaRey = Integer.parseInt(posRey.substring(1));
         int numeroColumnaRey = letras.indexOf(posRey.charAt(0)+1);
@@ -52,8 +52,8 @@ public class ej3_2021_MANANA_AZUL {
         if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
             if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
                 jaque = true;
-            }else{
-                jaque = comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1);
+            }else if (comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1)){
+                jaque = true;
             }
         }
         return jaque;
@@ -64,9 +64,8 @@ public class ej3_2021_MANANA_AZUL {
         if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
             if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
                 jaque = true;
-            }else{
-                jaque = comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1);
-            }
+            }else if (comprobarArribaIzquierda(numeroFilaReina-1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1)){
+                jaque = true;            }
         }
         return jaque;
     }
@@ -76,8 +75,8 @@ public class ej3_2021_MANANA_AZUL {
         if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
             if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
                 jaque = true;
-            }else{
-                jaque = comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1);
+            }else if (comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina+1)){
+                jaque = true;
             }
         }
         return jaque;
@@ -88,8 +87,8 @@ public class ej3_2021_MANANA_AZUL {
         if (numeroFilaReina>0 && numeroFilaReina<9 && numeroColumnaReina>0 && numeroColumnaReina<9){
             if (numeroFilaReina == numeroFilaRey && numeroColumnaReina == numeroColumnaRey){
                 jaque = true;
-            }else{
-                jaque = comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1);
+            }else if (comprobarArribaIzquierda(numeroFilaReina+1,numeroFilaRey, numeroColumnaRey, numeroColumnaReina-1)){
+                jaque = true;
             }
         }
         return jaque;
