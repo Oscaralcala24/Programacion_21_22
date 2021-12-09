@@ -16,20 +16,24 @@ public class Ejercicio6 {
     }
 
     private static int[] sinRepetidos(int[] sinRepetidos) {
-        int contadorNumeros = 0;
-        int [] arrayDevuelto = new int[contadorNumeros];
-        for (int i = 0; i < 10; i++) {
-            boolean repetido = false;
-            int contadorRepeticion = 0;
-            for (int j = 0; j < sinRepetidos.length; j++) {
-                if (i == sinRepetidos[j] && contadorRepeticion<1){
-                    contadorRepeticion++;
-                    contadorNumeros++;
-                    arrayDevuelto = Arrays.copyOf(arrayDevuelto,contadorNumeros);
-                    arrayDevuelto[contadorNumeros-1] = i;
-                }
+        int [] arrayAux = new int[0];
+        for (int i = 0; i < sinRepetidos.length; i++) {
+            if (!comprobarRepetido(sinRepetidos[i], arrayAux)){
+                arrayAux = Arrays.copyOf(arrayAux, arrayAux.length+1);
+                arrayAux[arrayAux.length-1] = sinRepetidos[i];
             }
         }
-        return arrayDevuelto;
+        return arrayAux;
+    }
+
+    private static boolean comprobarRepetido(int sinRepetido, int[] arrayAux) {
+        boolean seRepite = false;
+        for (int i = 0; i < arrayAux.length; i++) {
+            if (sinRepetido == arrayAux[i]){
+                seRepite = true;
+            }
+        }
+
+        return seRepite;
     }
 }
