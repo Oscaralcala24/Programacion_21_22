@@ -26,8 +26,6 @@ public class ej3_2021_MANANA_AZUL<posiciones> {
         }else {
             System.out.println("No es jaque");
         }
-
-
     }
 
     private static boolean jaque(String posRey, String posReina) {
@@ -100,8 +98,10 @@ public class ej3_2021_MANANA_AZUL<posiciones> {
         String letras = "abcdefgh";
         for (int i = 0; i < ajedrez.length; i++) {
             for (int j = 0; j < ajedrez[i].length; j++) {
-                ajedrez[i][j] = String.valueOf((ajedrez.length-i)+""+letras.charAt(j));
+                ajedrez[i][j] = String.valueOf((letras.charAt(j)+""+String.valueOf((ajedrez.length-i))));
+                System.out.print(" || "+ajedrez[i][j]+" || ");
             }
+            System.out.println();
         }
     }
 }
