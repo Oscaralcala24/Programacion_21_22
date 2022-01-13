@@ -1,4 +1,4 @@
-package U4.Tarea1;
+package U4.Tarea1.Ejercicio1234546;
 
 //Actividad 1: Diseñar la clase CuentaCorriente, sabiendo que los datos que caracterizan
 // a un objeto de ese tipo son: saldo, límite de descubrimiento
@@ -17,9 +17,10 @@ package U4.Tarea1;
 
 public class Main {
     public static void main(String[] args) {
+        Banco b1 = new Banco("La caixa", 7.3, "Calle Alixar");
         CuentaCorriente c1 = new CuentaCorriente("Oscar", "74847587L");
         CuentaCorriente c2 = new CuentaCorriente("Maria", "34458532A");
-
+        CuentaCorriente.setNombreBanco(b1);
 
         c1.ingresarDinero(500);
         System.out.println(c1.getNombre()+" tiene un saldo de "+c1.getSaldo());
@@ -30,6 +31,16 @@ public class Main {
         c2.ingresarDinero(200);
         c2.mostrarInformacion();
         c1.mostrarInformacion();
+
+        Texto txt1 = new Texto("Hey que pasa olvidonaaaaa", 27);
+        System.out.println("Este texto tiene "+txt1.getNumVocales()+" vocales");
+        txt1.insertarCaracterPrincipio('a');
+        txt1.insertarCaracterFinal('<');
+        txt1.insertarTextoFinal("ya ni saludas eh... ");
+        txt1.insertarTextoPrincipio("Ni dos besos ni nada? ");
+        System.out.println("Este texto tiene "+txt1.getNumVocales()+" vocales");
+
+
 
     }
 }
