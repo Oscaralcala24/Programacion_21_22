@@ -1,14 +1,28 @@
-package U4.Ejercicio1;
+package U4.Tarea1;
 
 public class CuentaCorriente {
 
-    private String nombre;
-    private String DNI;
+    public String nombre;
+    protected String DNI;
     private long saldo = 0;
     private static long limiteDeDescubrimiento = -50;
+    private static String nombreBanco = "La Caixa";
+
 
     public CuentaCorriente(String nombre, String DNI) {
         this.nombre = nombre;
+        this.DNI = DNI;
+
+    }
+
+    public CuentaCorriente(long saldo) {
+        this.saldo = saldo;
+        limiteDeDescubrimiento = 0;
+    }
+
+    public CuentaCorriente(long saldo, long limiteDeDescubrimiento, String DNI) {
+        this.saldo = saldo;
+        this.limiteDeDescubrimiento = limiteDeDescubrimiento;
         this.DNI = DNI;
 
     }
@@ -50,5 +64,9 @@ public class CuentaCorriente {
 
     public long getSaldo() {
         return saldo;
+    }
+
+    public static void setNombreBanco(String nombreBanco) {
+        CuentaCorriente.nombreBanco = nombreBanco;
     }
 }
