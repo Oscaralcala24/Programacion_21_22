@@ -13,11 +13,10 @@ public class Hora {
     }
     void sumarHora(int segundos){
 
-        while (segundos+this.segundo>=60){
+         while (segundos+this.segundo>=60){
             setMinuto(this.minuto+1);
-            segundos -= 60-this.segundo;
+            segundos -= 60;
         }
-        setSegundo(segundos);
         while (this.minuto>=60){
             setHora(this.hora+1);
             this.minuto -= 60;
