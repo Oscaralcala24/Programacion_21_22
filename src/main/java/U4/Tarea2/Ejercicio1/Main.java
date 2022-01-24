@@ -1,4 +1,4 @@
-package U4.Tarea2;
+package U4.Tarea2.Ejercicio1;
 
 import java.util.Arrays;
 

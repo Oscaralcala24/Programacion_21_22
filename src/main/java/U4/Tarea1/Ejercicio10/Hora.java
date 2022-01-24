@@ -7,9 +7,9 @@ public class Hora {
     private int segundo;
 
     public Hora(int hora, int minuto, int segundo) {
-        this.hora = hora;
-        this.minuto = minuto;
-        this.segundo = segundo;
+        setHora(hora);
+        setMinuto(minuto);
+        setSegundo(segundo);
     }
     void sumarHora(int segundos){
 
@@ -36,7 +36,11 @@ public class Hora {
     }
 
     private void setHora(int hora) {
-        this.hora = hora;
+        if (hora<=24){
+            this.hora =hora;
+        }else {
+            this.hora = 0;
+        }
     }
 
     public int getMinuto() {
@@ -44,7 +48,11 @@ public class Hora {
     }
 
     private void setMinuto(int minuto) {
-        this.minuto = minuto;
+        if (minuto<=60){
+            this.minuto = minuto;
+        }else {
+            this.minuto = 0;
+        }
     }
 
     public int getSegundo() {
@@ -52,6 +60,10 @@ public class Hora {
     }
 
     private void setSegundo(int segundo) {
-        this.segundo = segundo;
+        if (segundo<=60){
+            this.segundo = segundo;
+        }else {
+            this.segundo = 0;
+        }
     }
 }
