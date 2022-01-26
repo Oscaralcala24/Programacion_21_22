@@ -8,7 +8,6 @@ public class Pizza {
 
     private tamanoPizza tamano;
     private String [] ingredientesPizza = new String[0];
-
     public Pizza(tamanoPizza tamano) {
         this.tamano = tamano;
     }
@@ -42,8 +41,9 @@ public class Pizza {
     }
 
     public void mostrarInfoPizza(){
+        String texto = Arrays.toString(getIngredientesPizza());
         System.out.println("El tamaño de la pizza es: "+getTamano());
-        System.out.println("Los ingredientes que lleva son: "+ Arrays.toString(getIngredientesPizza()));
+        System.out.println("Los ingredientes que lleva son: "+ texto);
     }
 
     public void setIngredientesPizza() {
