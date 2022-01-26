@@ -24,6 +24,9 @@ public class Pedido {
     public Pizza getPizzaPedido() {
         return pizzaPedido;
     }
+    public void getPizza() {
+        System.out.println("La pizza pedida fue: "+ pizzaPedido);
+    }
 
     public LocalDateTime getFechaHora() {
         return fechaHora;

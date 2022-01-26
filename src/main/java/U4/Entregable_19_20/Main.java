@@ -29,6 +29,8 @@ public class Main {
         telepizza.mostrarCantidadPedido();
         telepizza.mostrarInfoPedidos();
 
+        
+        System.out.println(pedido1.getFechaHora());
 
     }
 }

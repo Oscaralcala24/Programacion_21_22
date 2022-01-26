@@ -28,7 +28,11 @@ public class Pizzeria {
 
     public void mostrarInfoPedidos(){
         System.out.println("Informacion de los pedidos: ");
-        System.out.println(Arrays.toString(getNumPedidos()));
+        for (int i = 0; i < contadorPedidos; i++) {
+            System.out.println("A las "+numPedidos[i].getFechaHora()+" se ha pedido una pizza de tamaño "
+                    + numPedidos[i].getPizzaPedido().getTamano()+" con los siguientes ingredientes: ");
+            numPedidos[i].getPizzaPedido().getIngredientesPizza();
+        }
     }
 
     public void mostrarCantidadPedido(){

@@ -7,20 +7,22 @@ public class Pizza {
 
 
     private tamanoPizza tamano;
-    private String [] ingredientesPizza = new String[0];
+
+    private Ingrediente [] ingredientesPizza = new Ingrediente[0];
+
+
     public Pizza(tamanoPizza tamano) {
         this.tamano = tamano;
     }
     public Pizza() {
         this.tamano = tamanoPizza.Familiar;
     }
-
     boolean anadirIngredientes(Ingrediente ingrediente){
         boolean incompleta = false;
         if (ingredientesPizza.length<3){
             incompleta = true;
             setIngredientesPizza();
-            ingredientesPizza[ingredientesPizza.length-1] = String.valueOf(ingrediente);
+            ingredientesPizza[ingredientesPizza.length-1] = ingrediente;
         }
         return incompleta;
     }
@@ -31,19 +33,20 @@ public class Pizza {
         System.out.println("- "+ tamanoPizza.Mediana);
     }
 
+
+
     public static enum tamanoPizza {
         Mediana,
-        Familiar
-    }
-
-    public String[] getIngredientesPizza() {
-        return ingredientesPizza;
+        Familiar;
     }
 
     public void mostrarInfoPizza(){
-        String texto = Arrays.toString(getIngredientesPizza());
         System.out.println("El tamaño de la pizza es: "+getTamano());
-        System.out.println("Los ingredientes que lleva son: "+ texto);
+        System.out.println("Los ingredientes que lleva son: ");
+        for (int i = 0; i < ingredientesPizza.length; i++) {
+            ingredientesPizza[i].getNombreIngrediente();
+        }
+
     }
 
     public void setIngredientesPizza() {
@@ -52,6 +55,16 @@ public class Pizza {
 
     public tamanoPizza getTamano() {
         return tamano;
+    }
+
+    public void getNumIngredientes(){
+        System.out.println("La pizza tiene "+ingredientesPizza.length+" ingredientes");
+    }
+
+    public void getIngredientesPizza() {
+        for (int i = 0; i < ingredientesPizza.length; i++) {
+            ingredientesPizza[i].getNombreIngrediente();
+        }
     }
 
 }
