@@ -5,20 +5,23 @@ import java.util.Arrays;
 
 public class Pizzeria {
 
-
-    private Pedido[] numPedidos = new Pedido[5];
+    private int tamanoPedidos;
+    private Pedido[] numPedidos;
     private int contadorPedidos = 0;
 
     public Pizzeria() {
-        this.numPedidos = numPedidos;
+        this.tamanoPedidos = 5;
+        this.numPedidos = new Pedido[tamanoPedidos];
+
     }
 
     public Pizzeria(int cantidad) {
-        this.numPedidos = Arrays.copyOf(this.numPedidos, cantidad);
+        this.numPedidos = new Pedido[cantidad];
+        this.tamanoPedidos = cantidad;
     }
 
     public void anadirPedido(Pedido pedidoPizzeria){
-        if (contadorPedidos>=5){
+        if (contadorPedidos>=tamanoPedidos){
             this.numPedidos = Arrays.copyOf(this.numPedidos, this.numPedidos.length+1);
             numPedidos[contadorPedidos++] = pedidoPizzeria;
         }else {
