@@ -13,7 +13,26 @@ public class Enemigo {
         this.puntosVida = 100;
     }
 
-    public void restarPuntosVida(){
+    public void restarPuntosVidaPatada(Personaje personaje){
+        if (this.puntosVida> personaje.getDanoPatada()){
+            setPuntosVida(puntosVida-personaje.getDanoPatada());
+            System.out.println("Ha inflijido "+ personaje.getDanoPatada() + " puntos de daño");
+        }else {
+            System.out.println("Ha inflijido "+ personaje.getDanoPatada() + " puntos de daño");
+            System.out.println("El enemigo ha muerto");
+
+        }
+
+    }
+    public void restarPuntosVidaPunetazo(Personaje personaje){
+        if (this.puntosVida>personaje.getDanoPunetazo()){
+            setPuntosVida(puntosVida-personaje.getDanoPatada());
+            System.out.println("Ha inflijido "+ personaje.getDanoPatada() + " puntos de daño");
+        }else {
+            System.out.println("Ha inflijido "+ personaje.getDanoPatada() + " puntos de daño");
+            System.out.println("El enemigo ha muerto");
+
+        }
 
     }
 
@@ -36,5 +55,10 @@ public class Enemigo {
     }
     public void nombreEnemigo(){
         System.out.println(nombreEnemigo);
+    }
+
+
+    public void setPuntosVida(int puntosVida) {
+        this.puntosVida = puntosVida;
     }
 }

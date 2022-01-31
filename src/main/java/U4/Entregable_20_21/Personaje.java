@@ -35,7 +35,11 @@ public class Personaje {
         System.out.println("Su ataque patada inflinje: " + this.danoPatada+ " puntos de daño");
     }
 
-    public void pegaPunetazo(int enemigoAtacar){
-        restar
+    public int getDanoPunetazo() {
+        return danoPunetazo;
+    }
+
+    public int getDanoPatada() {
+        return danoPatada;
     }
 }
