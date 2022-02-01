@@ -8,12 +8,14 @@ public class Departamento {
     private String sede = "Castilleja";
     private int extensionTfn;
     private Empleado[] listaEmpleados = new Empleado[0];
-    private int contadorEmpleados = 0;
+    private int contadorEmpleadosAnadidos = 0;
+    private int contadorDepartamento = 0;
 
     public Departamento(String nombreDepartamento, String sede, int extensionTfn) {
         this.nombreDepartamento = nombreDepartamento;
         this.sede = sede;
         this.extensionTfn = extensionTfn;
+        contadorDepartamento++;
     }
     public Departamento(String nombreDepartamento, int extensionTfn) {
         this.nombreDepartamento = nombreDepartamento;
@@ -22,7 +24,8 @@ public class Departamento {
 
     void anadirEmpleado(Empleado empleadoAnadir){
         this.listaEmpleados = Arrays.copyOf(this.listaEmpleados, this.listaEmpleados.length + 1);
-        listaEmpleados[contadorEmpleados - 1] = empleadoAnadir;
+        listaEmpleados[contadorEmpleadosAnadidos++] = empleadoAnadir;
+
     }
 
     void eliminarEmpleado(int posicion){
@@ -36,7 +39,19 @@ public class Departamento {
     }
     void mostrarListaEmpleados(){
         for (int i = 0; i < listaEmpleados.length; i++) {
-            System.out.println(listaEmpleados[i]);
+            listaEmpleados[i].getNombreCompleto();
         }
     }
+
+
+    public String getNombreDepartamento() {
+        return nombreDepartamento;
+    }
+
+
+    public int getContadorDepartamento() {
+        return contadorDepartamento;
+    }
+
+
 }
