@@ -10,12 +10,12 @@ public class Material {
     public Material(String descripcion, String proveedor, int unidades, double precio) {
         this.descripcion = descripcion;
         this.proveedor = proveedor;
-        if (precio>0 && precio<100000){
+        if (precio>=0 && precio<=100000){
             this.precio = precio;
         }else {
             this.precio = 0;
         }
-        if (unidades>1 && unidades<1000){
+        if (unidades>=1 && unidades<=1000){
             this.unidades = unidades;
         }else {
             this.unidades = 1;
@@ -24,12 +24,12 @@ public class Material {
 
     public Material(String descripcion, int unidades, double precio) {
         this.descripcion = descripcion;
-        if (precio>0 && precio<100000){
+        if (precio>=0 && precio<=100000){
             this.precio = precio;
         }else {
             this.precio = 0;
         }
-        if (unidades>1 && unidades<1000){
+        if (unidades>=1 && unidades<=1000){
             this.unidades = unidades;
         }else {
             this.unidades = 1;
