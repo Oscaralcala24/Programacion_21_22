@@ -2,20 +2,20 @@ package U5.Tarea1.Parte2;
 
 import java.util.Arrays;
 
-public class Instrumento {
+public abstract class Instrumento {
 
-    notasMusicales[] listaNotas = new notasMusicales[0];
+
+    private notasMusicales[] listaNotas;
 
     public Instrumento() {
-
+        this.listaNotas = new notasMusicales[100];
     }
 
-    void add(notasMusicales notas){
-        if (listaNotas.length<100){
-            listaNotas = Arrays.copyOf(listaNotas, listaNotas.length+1);
-            listaNotas[listaNotas.length-1] = notas;
-        }
-    }
+
+
+
+    public abstract void interpretar();
+    public abstract void add(notasMusicales nota);
 
     public enum notasMusicales{
         DO,
@@ -26,4 +26,10 @@ public class Instrumento {
         LA,
         SI
     }
+
+    public notasMusicales[] getListaNotas() {
+        return listaNotas;
+    }
+
+
 }
