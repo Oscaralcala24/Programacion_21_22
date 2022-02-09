@@ -2,11 +2,9 @@ package U5.Tarea1.Parte3;
 
 public class Caja {
 
-    private String etiqueta;
-    private double alto;
-    private double ancho;
-    private double fondo;
-    private Unidades unidad;
+    public String etiqueta;
+    protected double alto, ancho, fondo;
+    protected Unidades unidad;
 
     public Caja(double alto, double ancho, double fondo, Unidades unidad) {
         this.alto = alto;
@@ -28,7 +26,8 @@ public class Caja {
     public String toString(){
         return "Alto de la caja: " + this.alto + this.unidad +
         "\n Anchura de la caja: " + this.ancho + this.unidad +
-        " \n Fondo de la caja: " + this.fondo + this.unidad;
+        " \n Fondo de la caja: " + this.fondo + this.unidad+
+                " \n Etiqueta de la caja: " + this.etiqueta;
     }
 
     public void setEtiqueta(String etiqueta) {
