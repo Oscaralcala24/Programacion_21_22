@@ -1,12 +1,19 @@
 package U5.Tarea1.Parte4;
 
-public class Lavadora extends Electrodomestico{
+import java.util.Arrays;
+
+public class Lavadora extends Electrodomestico implements Comparable{
 
     private int carga = 5;
 
     public Lavadora(double precioBase, coloresDisponibles color, consumoEnergetico consumoLetra, double peso, int carga) {
         super(precioBase, color, consumoLetra, peso);
         this.carga = carga;
+    }
+
+    public void introducirLavadora(Lavadora[] arrayLavadora) {
+        arrayLavadora = Arrays.copyOf(arrayLavadora, arrayLavadora.length+1);
+        arrayLavadora[arrayLavadora.length-1] = this;
     }
 
     public Lavadora(double precioBase, double peso) {
@@ -35,5 +42,16 @@ public class Lavadora extends Electrodomestico{
             precioFinal += 50;
         }
         return precioFinal;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Lavadora lv1 = (Lavadora) o;
+        if (this.carga < lv1.carga){
+            return -1;
+        }else if (this.carga > lv1.carga){
+            return 1;
+        }
+        return 0;
     }
 }
