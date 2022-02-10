@@ -11,10 +11,6 @@ public class Lavadora extends Electrodomestico implements Comparable{
         this.carga = carga;
     }
 
-    public void introducirLavadora(Lavadora[] arrayLavadora) {
-        arrayLavadora = Arrays.copyOf(arrayLavadora, arrayLavadora.length+1);
-        arrayLavadora[arrayLavadora.length-1] = this;
-    }
 
     public Lavadora(double precioBase, double peso) {
         super(precioBase, peso);
