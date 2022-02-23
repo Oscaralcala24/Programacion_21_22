@@ -1,10 +1,10 @@
 package U5.Examen1920;
 
-public abstract class Material{
+public abstract class Material implements Comparable{
 
 
     private String nombre;
-    long masa;
+    private long masa;
     private int capQuemar;
     private int capDiluir;
     private boolean movible;
@@ -43,7 +43,38 @@ public abstract class Material{
     }
 
 
+    @Override
+    public String toString() {
+        return "Material{" +"\n"+
+                "nombre='" + nombre + '\'' +"\n"+
+                "masa=" + masa +"\n"+
+                "capQuemar=" + capQuemar +"\n"+
+                "capDiluir=" + capDiluir +"\n"+
+                "movible=" + movible +"\n"+
+                '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Material that = (Material) o;
+        if (that.getMasa() > this.getMasa()){
+            return -1;
+        } else if (that.getMasa() < this.getMasa()) {
+            return 1;
+        }
+        return 0;
+    }
+
     public long getMasa() {
         return masa;
+    }
+
+
+    public int getCapQuemar() {
+        return capQuemar;
+    }
+
+    public int getCapDiluir() {
+        return capDiluir;
     }
 }
