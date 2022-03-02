@@ -10,13 +10,13 @@ public class Ejercicio4 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce anchura tabla: ");
         int n = sc.nextInt();
-        int [] array = new int[n];
+        double [] array = new double[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Introduce numero: ");
-            array[i] = sc.nextInt();
+            array[i] = sc.nextDouble();
         }
         try {
-            ObjectOutputStream fichero = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Oscar\\Desktop\\Programacion_21_22\\src\\main\\java\\U6\\Tarea2\\Ejercicio4\\datos.dat",true));
+            ObjectOutputStream fichero = new ObjectOutputStream(new FileOutputStream("C:\\Users\\se_os\\Escritorio\\Programacion_21_22\\src\\main\\java\\U6\\Tarea2\\Ejercicio4\\datos.dat"));
             fichero.writeObject(array);
             fichero.close();
         } catch (IOException e) {
