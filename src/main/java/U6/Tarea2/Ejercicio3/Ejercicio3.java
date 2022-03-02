@@ -23,21 +23,17 @@ public class Ejercicio3 {
             e.printStackTrace();
         }
 
-
-
         try {
             ObjectInputStream leerFichero = new ObjectInputStream(new FileInputStream("C:\\Users\\se_os\\Escritorio\\Programacion_21_22\\src\\main\\java\\U6\\Tarea2\\Ejercicio3\\datos.dat"));
             int numero = leerFichero.readInt();
-            while (numero!=-1){
+            while (true){
                 System.out.println(numero);
                 numero =leerFichero.readInt();
             }
-            leerFichero.close();
-        } catch (EOFException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
+        }catch (EOFException e){
+            System.out.println("Fin de fichero");
+        }catch (IOException e) {
+            System.out.println("Error");
         }
 
     }

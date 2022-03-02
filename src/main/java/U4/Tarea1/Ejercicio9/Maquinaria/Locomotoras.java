@@ -2,7 +2,9 @@ package U4.Tarea1.Ejercicio9.Maquinaria;
 
 import U4.Tarea1.Ejercicio9.Personal.Mecanicos;
 
-public class Locomotoras {
+import java.io.Serializable;
+
+public class Locomotoras implements Serializable {
     private String matricula;
     private int potencia;
     private int anoFabricacion;
@@ -13,5 +15,15 @@ public class Locomotoras {
         this.potencia = potencia;
         this.anoFabricacion = anoFabricacion;
         this.mecanico = mecanico;
+    }
+
+    @Override
+    public String toString() {
+        return "Locomotoras{" +
+                "matricula='" + matricula + '\'' +
+                ", potencia=" + potencia +
+                ", anoFabricacion=" + anoFabricacion +
+                ", mecanico=" + mecanico +
+                '}';
     }
 }

@@ -2,9 +2,10 @@ package U4.Tarea1.Ejercicio9.Maquinaria;
 
 import U4.Tarea1.Ejercicio9.Personal.Maquinistas;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Trenes {
+public class Trenes implements Serializable {
 
     private Locomotoras locomotora;
     Vagones[] vagones = new Vagones[0];
@@ -34,4 +35,12 @@ public class Trenes {
 
     }
 
+    @Override
+    public String toString() {
+        return "Trenes{" +
+                "locomotora=" + locomotora +
+                ", vagones=" + Arrays.toString(vagones) +
+                ", maquinista=" + maquinista +
+                '}';
+    }
 }

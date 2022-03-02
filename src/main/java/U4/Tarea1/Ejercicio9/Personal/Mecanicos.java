@@ -1,6 +1,8 @@
 package U4.Tarea1.Ejercicio9.Personal;
 
-public class Mecanicos {
+import java.io.Serializable;
+
+public class Mecanicos implements Serializable {
     private String nombreMecanico;
     private long telefono;
     private tipoEspecialidad tipo;

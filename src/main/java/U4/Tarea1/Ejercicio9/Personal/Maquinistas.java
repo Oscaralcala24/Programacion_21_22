@@ -1,6 +1,8 @@
 package U4.Tarea1.Ejercicio9.Personal;
 
-public class Maquinistas {
+import java.io.Serializable;
+
+public class Maquinistas implements Serializable {
     private String nombreMaquinista;
     private String DNIMaquinista;
     private double sueldoMensual;
@@ -11,5 +13,15 @@ public class Maquinistas {
         this.DNIMaquinista = DNI;
         this.sueldoMensual = sueldoMensual;
         this.rango = rango;
+    }
+
+    @Override
+    public String toString() {
+        return "Maquinistas{" +
+                "nombreMaquinista='" + nombreMaquinista + '\'' +
+                ", DNIMaquinista='" + DNIMaquinista + '\'' +
+                ", sueldoMensual=" + sueldoMensual +
+                ", rango=" + rango +
+                '}';
     }
 }
