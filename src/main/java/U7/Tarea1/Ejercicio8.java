@@ -29,7 +29,7 @@ public class Ejercicio8 {
         }
     }
 
-    private static List quitarRepetidos(List<String> listaArray) {
+    private static List quitarRepetidos(List listaArray) {
         TreeSet<String> treeLista = new TreeSet<>(listaArray);
         return new ArrayList<>(treeLista);
     }
