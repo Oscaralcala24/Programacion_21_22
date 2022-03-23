@@ -6,7 +6,7 @@ import java.util.*;
 public class Instituto implements Serializable {
     private String nombreInstituto;
     private ArrayList<Unidad> listaUnidad = new ArrayList<>();
-    private static Map<Unidad,ArrayList<Alumno>> mapaUnidad = new LinkedHashMap<>();
+    private Map<Unidad,ArrayList<Alumno>> mapaUnidad = new LinkedHashMap<>();
 
     public Instituto(String nombreInstituto) {
         this.nombreInstituto = nombreInstituto;
@@ -17,7 +17,6 @@ public class Instituto implements Serializable {
             ArrayList<Alumno> listaAux = mapaUnidad.get(u1);
             listaAux.add(a1);
             System.out.println(listaAux.toString());
-
             mapaUnidad.put(u1,listaAux);
         }else  {
             ArrayList<Alumno> listaAux = new ArrayList<>();
@@ -67,7 +66,7 @@ public class Instituto implements Serializable {
         Collections.sort(listaAlumnos, new OrdenarApellido());
     }
 
-    public static Map<Unidad, ArrayList<Alumno>> getMapaUnidad() {
+    public Map<Unidad, ArrayList<Alumno>> getMapaUnidad() {
         return mapaUnidad;
     }
 
@@ -116,4 +115,5 @@ public class Instituto implements Serializable {
             e.printStackTrace();
         }
     }
+
 }

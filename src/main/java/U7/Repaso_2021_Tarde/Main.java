@@ -33,10 +33,10 @@ public class Main {
         insti1.mostrarAlumnosUnidad(u1);
         System.out.println();
         System.out.println();
-        insti1.mostrarAlumnosUnidad(u1);
+        insti1.mostrarAlumnosUnidad(u2);
         System.out.println();
         System.out.println();
-        insti1.mostrarAlumnosUnidad(u1);
+        insti1.mostrarAlumnosUnidad(u3);
         insti1.mostrarTodosAlumnosOrdenados();
     }
 }
