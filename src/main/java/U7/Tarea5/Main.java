@@ -1,9 +1,17 @@
 package U7.Tarea5;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
-     private static Scanner sc = new Scanner(System.in);
+public class Main implements Serializable {
+    private static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         int respuesta = 0;
         do {
@@ -12,29 +20,22 @@ public class Main {
             System.out.println("2. Calificar prueba");
             System.out.println("3. Aprobados");
             System.out.println("4. Salir");
+
             respuesta = sc.nextInt();
             switch (respuesta){
                 case 1 :
-                    boolean introducirMas = false;
-                    do {
-                        System.out.println("Introduce nombre: ");
-                        String nombre = sc.nextLine();
-                        System.out.println("Introduce dni: ");
-                        String dni = sc.nextLine();
-                        System.out.println("Introduce telefono: ");
-                        String telefono = sc.nextLine();
-                        IntroducirAspirantes i1 = new IntroducirAspirantes(nombre,dni,telefono);
-                        System.out.println("Desea introducir mas? s/n");
-                        String respuestaMas = sc.next();
-                        if (respuestaMas.equalsIgnoreCase("s")){
-                            introducirMas = true;
-                        }
-                    }while (introducirMas); break;
+                    IntroducirAspirantes.InsertaAspirante();
+                    IntroducirAspirantes.guardarFicheros();break;
                 case 2 :
-                    break;
+                    CalificacionPruebas.cargarID();
+                    CalificacionPruebas.calificarPrueba();
+                    CalificacionPruebas.guardarFicheros();break;
                 case 3 : break;
             }
         }while (respuesta!=4);
 
     }
+
+
+
 }
