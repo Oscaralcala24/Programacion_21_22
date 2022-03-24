@@ -9,7 +9,7 @@ public class Coronavirus implements Serializable{
     private static final String nombreCientifico = "COVID-19";
     private static final String localidadVirus = "Wuhan";
     private static int contador = 1;
-    private static int numeroCepa;
+    private int numeroCepa;
     private static Map<Integer,List<Paciente>> mapaPacientes = new HashMap<>();
 
     public Coronavirus() {
@@ -85,7 +85,7 @@ public class Coronavirus implements Serializable{
     }
 
     public static void guardarPacientes(){
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/main/java/U7/Repaso_1920_Tarde/pacientes.dat"))){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/main/java/U7/Repaso_1920_Tarde/pacientes.dat",true))){
             Iterator<Integer> it0 = mapaPacientes.keySet().iterator();
             while (it0.hasNext()){
                 Integer cepaAux = it0.next();
