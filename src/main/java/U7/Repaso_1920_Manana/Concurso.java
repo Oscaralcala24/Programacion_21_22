@@ -54,6 +54,20 @@ public class Concurso implements Serializable {
         }
     }
 
+    public void cargarPerros(){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("src/main/java/U7/Repaso_1920_Manana/Perros.dat"))){
+             List<Perro> listaAux = (List<Perro>) in.readObject();
+             mapaPerros.clear();
+             Iterator<Perro> it0 = listaAux.iterator();
+             while (it0.hasNext()){
+                 Perro perroAux = it0.next();
+                 addDog(perroAux.getRaza(),perroAux);
+             }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void disqualifyDog(Perro perro){
         boolean esta = false;
         Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
@@ -83,6 +97,7 @@ public class Concurso implements Serializable {
                 List<Perro> listaPerrosPorRaza = mapaPerros.get(razaAux);
                 listaPerrosPorRaza.addAll(listaPerrosPorRaza);
             }
+            out.reset();
         } catch (IOException e) {
             e.printStackTrace();
         }

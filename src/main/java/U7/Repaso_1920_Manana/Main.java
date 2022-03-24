@@ -38,6 +38,7 @@ public class Main {
         c1.perrosporEdad(Perro.Raza.BOXER);
 
         c1.guardarPerros();
+        c1.cargarPerros();
     }
 
 }
