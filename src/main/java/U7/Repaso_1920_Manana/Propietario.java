@@ -1,6 +1,9 @@
 package U7.Repaso_1920_Manana;
 
-public class Propietario {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Propietario implements Serializable {
     private String nombrePropietario;
     private String apellidosPropietario;
     private int numeroSocio;
@@ -36,5 +39,22 @@ public class Propietario {
 
     public void setPaisOrigen(String paisOrigen) {
         this.paisOrigen = paisOrigen;
+    }
+
+    public int getNumeroSocio() {
+        return numeroSocio;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroSocio);
+    }
+
+    @Override
+    public String toString() {
+        return "Propietario{" +
+                "nombrePropietario='" + nombrePropietario + '\'' +
+                ", numeroSocio=" + numeroSocio +
+                '}';
     }
 }

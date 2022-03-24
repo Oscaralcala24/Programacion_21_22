@@ -1,8 +1,9 @@
 package U7.Repaso_1920_Manana;
 
+import java.io.*;
 import java.util.*;
 
-public class Concurso {
+public class Concurso implements Serializable {
     private String nombreConcurso;
     private String localidad;
     private List<Perro> listaPerros = new ArrayList<>();
@@ -13,18 +14,77 @@ public class Concurso {
         setLocalidad(localidad);
     }
 
-    public void disqualifyDog(Perro perro){
-        if (mapaPerros.containsValue(perro)){
-            Set<Map.Entry<Perro.Raza,List<Perro>>> entradas = mapaPerros.entrySet();
-            Iterator<Map.Entry<Perro.Raza,List<Perro>>> it0 = entradas.iterator();
-            while (it0.hasNext()){
-                Map.Entry<Perro.Raza,List<Perro>> aux = it0.next();
-                if (aux.getValue().equals(perro)){
-                    it0.remove();
+    public void ownerDogs(int numeroSocio){
+        boolean tiene = false;
+        Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
+        while (it0.hasNext()){
+            Perro.Raza razaAux = it0.next();
+            List<Perro> aux = mapaPerros.get(razaAux);
+            Iterator<Perro> it1 = aux.iterator();
+            while (it1.hasNext()){
+                Perro perroAux = it1.next();
+                if (perroAux.getPropietario().getNumeroSocio() == numeroSocio){
+                    System.out.println(perroAux);
                 }
             }
-        }else {
+        }
+    }
+
+    public void perrosporPeso(Perro.Raza raza){
+        Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
+        while (it0.hasNext()){
+            Perro.Raza razaAux = it0.next();
+            if (razaAux.equals(raza)){
+                List<Perro> listaPerros = mapaPerros.get(raza);
+                Collections.sort(listaPerros, new OrdenarPesoDecreciente());
+                System.out.println(listaPerros);
+            }
+        }
+    }
+
+    public void perrosporEdad(Perro.Raza raza){
+        Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
+        while (it0.hasNext()){
+            Perro.Raza razaAux = it0.next();
+            if (razaAux.equals(raza)){
+                List<Perro> listaPerros = mapaPerros.get(raza);
+                Collections.sort(listaPerros, new OrdenarEdadDecreciente());
+                System.out.println(listaPerros);
+            }
+        }
+    }
+
+    public void disqualifyDog(Perro perro){
+        boolean esta = false;
+        Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
+        while (it0.hasNext()){
+            Perro.Raza razaAux = it0.next();
+            List<Perro> aux = mapaPerros.get(razaAux);
+            Iterator<Perro> it1 = aux.iterator();
+            while (it1.hasNext()){
+                Perro perroAux = it1.next();
+                if (perroAux.equals(perro)){
+                    it1.remove();
+                    esta= true;
+                }
+            }
+        }
+        if(!esta) {
             System.out.println("Perro no inscrito");
+        }
+    }
+
+    public void guardarPerros(){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("src/main/java/U7/Repaso_1920_Manana/Perros.dat",true))) {
+            List<Perro> listaPerrosGuardar = new ArrayList<>();
+            Iterator<Perro.Raza> it0 = mapaPerros.keySet().iterator();
+            while (it0.hasNext()){
+                Perro.Raza razaAux = it0.next();
+                List<Perro> listaPerrosPorRaza = mapaPerros.get(razaAux);
+                listaPerrosPorRaza.addAll(listaPerrosPorRaza);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -37,7 +97,6 @@ public class Concurso {
             mapaPerros.get(raza).add(perro);
         }
         listaPerros.add(perro);
-
     }
 
     public String getNombreConcurso() {
@@ -55,4 +114,5 @@ public class Concurso {
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
+
 }

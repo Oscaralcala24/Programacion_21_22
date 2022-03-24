@@ -1,8 +1,9 @@
 package U7.Repaso_1920_Manana;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Perro {
+public class Perro implements Serializable {
     private String nombrePerro;
     private Integer edad;
     private double pesoPerro;
@@ -71,5 +72,25 @@ public class Perro {
 
     public void setVacunas(boolean vacunas) {
         this.vacunas = vacunas;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public Raza getRaza() {
+        return raza;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" +
+                "nombrePerro='" + nombrePerro + '\'' +
+                ", edad=" + edad +
+                ", pesoPerro=" + pesoPerro +
+                ", vacunas=" + vacunas +
+                ", propietario=" + propietario +
+                ", raza=" + raza +
+                '}';
     }
 }
