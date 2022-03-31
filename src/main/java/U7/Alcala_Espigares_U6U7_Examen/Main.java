@@ -35,8 +35,9 @@ public class Main {
         productora.addPeliculaActor(p4,a3);
         productora.addPeliculaActor(p4,a4);
         productora.addPeliculaActor(p4,a5);
-
         productora.addPeliculaActor(p5,a5);
+
+
         System.out.println("MUESTRA ACTOR");
         System.out.println(productora.getActor("Rafa", "Mir"));
         System.out.println();
@@ -59,5 +60,6 @@ public class Main {
         productora.guardarDatos();
 
         productora.cargarDatos();
+
     }
 }
