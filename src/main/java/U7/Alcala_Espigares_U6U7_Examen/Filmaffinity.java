@@ -83,8 +83,7 @@ public class Filmaffinity {
         Iterator<Actor> it2 = participacionPeliculas.keySet().iterator();
         while (it2.hasNext()){
             Actor actorAux = it2.next();
-            Set<Pelicula> listaPeliculaAux = participacionPeliculas.get(actorAux);
-            Iterator<Pelicula> iteradorPelicula = listaPeliculaAux.iterator();
+            Iterator<Pelicula> iteradorPelicula = participacionPeliculas.get(actorAux).iterator();
             while (iteradorPelicula.hasNext()){
                 Pelicula peliculaABorrar = iteradorPelicula.next();
                 if (peliculaABorrar.getTitulo().equals(titulo)){
