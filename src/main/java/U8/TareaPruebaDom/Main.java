@@ -25,12 +25,16 @@ public class Main {
                     Persona p = new Persona();
                     NodeList nl1 = nl.item(i).getChildNodes();
                     for (int j = 0; j < nl1.getLength(); j++) {
-                        if (nl1.item(j).equals("nombre")) {
-                            p.setNombre(nl1.item(j).getTextContent());
-                        } else if (nl1.item(j).equals("edad")) {
-                            p.setEdad(Integer.parseInt(nl1.item(j).getTextContent()));
+                        if (nl1.item(j).getNodeType() == Node.ELEMENT_NODE) {
+                            Element e = (Element) nl1.item(j);
+                            if (e.getTagName().equals("nombre")) {
+                                p.setNombre(e.getTextContent());
+                            } else if (e.getTagName().equals("edad")) {
+                                p.setEdad(Integer.parseInt(e.getTextContent()));
+                            }
                         }
                     }
+                    System.out.println(p);
                     Persona.arrayPersonas.add(p);
                 }
             }
