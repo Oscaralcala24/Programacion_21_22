@@ -97,6 +97,7 @@ public class crearStaxCero {
 
             EndDocument endDocument = eventFactory.createEndDocument();
             xmlWriter.add(endDocument);
+            xmlWriter.close();
 
 
         } catch (XMLStreamException | FileNotFoundException e) {
