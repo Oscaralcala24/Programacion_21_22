@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Liga>
+    <equipo>
+        <nombre>Sevilla FC</nombre>
+        <presidente>Pepe Castro</presidente>
+        <estadio>Ramon Sanchez Pizjuan</estadio>
+        <puesto>3</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Barcelona</nombre>
+        <presidente>Joan Laporta</presidente>
+        <estadio>Camp nou</estadio>
+        <puesto>2</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Real Madrid</nombre>
+        <presidente>Florentino Perez</presidente>
+        <estadio>Bernabeu</estadio>
+        <puesto>1</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Cadiz</nombre>
+        <presidente>Manuel VizcaÃ­no FernÃ¡ndez</presidente>
+        <estadio>Nuevo Mirandilla</estadio>
+        <puesto>17</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Real Sociedad de FÃºtbol</nombre>
+        <presidente>Jokin Aperribay</presidente>
+        <estadio>Reale Arena</estadio>
+        <puesto>6</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Club AtlÃ©tico Osasuna</nombre>
+        <presidente>Luis Sabalza</presidente>
+        <estadio>Estadio El SADAR</estadio>
+        <puesto>9</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Valencia Club de FÃºtbol</nombre>
+        <presidente>Peter Lim</presidente>
+        <estadio>Estadio de Mestalla</estadio>
+        <puesto>10</puesto>
+    </equipo>
+    <equipo>
+        <nombre>RCD Espanyol</nombre>
+        <presidente>Roger Guasch </presidente>
+        <estadio>RCDE Stadium</estadio>
+        <puesto>13</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Levante UniÃ³n Deportiva</nombre>
+        <presidente>Francisco CatalÃ¡n</presidente>
+        <estadio> Estadio Ciudad de Valencia</estadio>
+        <puesto>19</puesto>
+    </equipo>
+    <equipo>
+        <nombre>Granada Club de FÃºtbol</nombre>
+        <presidente>Quique Pina</presidente>
+        <estadio>Estadio Nuevo Los CÃ¡rmenes</estadio>
+        <puesto>18</puesto>
+    </equipo>
+</Liga>

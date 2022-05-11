@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ligas>
+    <laliga>
+        <equipo>
+            <nombre>SevillaFC</nombre>
+            <anoCreacion>1890</anoCreacion>
+            <presidente>Pepe Castro</presidente>
+        </equipo>
+        <equipo>
+            <nombre>FC Barcelona</nombre>
+            <anoCreacion>1899</anoCreacion>
+            <presidente>Joan Laporta</presidente>
+        </equipo>
+        <equipo>
+            <nombre>Real Madrid</nombre>
+            <anoCreacion>1902</anoCreacion>
+            <presidente>Florentino Perez</presidente>
+        </equipo>
+    </laliga>
+</ligas>

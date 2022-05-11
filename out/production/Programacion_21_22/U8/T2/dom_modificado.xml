@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><personas info="personas" otro="ejemplo">
+    <!--<!- - COMENTARIO AÃ‘ADIDO DESDE DOM - ->--><persona><nombre>Luis</nombre><edad>53</edad></persona>
+    <!--<!- - COMENTARIO AÃ‘ADIDO DESDE DOM - ->--><persona id="2">
+        <nombre>Juanito</nombre>
+        <edad>13</edad>
+    </persona>
+    <!--<!- - COMENTARIO AÃ‘ADIDO DESDE DOM - ->--><persona id="3">
+        <nombre>Laurita</nombre>
+        <edad>23</edad>
+    </persona>
+<persona><nombre>Oscar</nombre><edad>24</edad></persona></personas>
