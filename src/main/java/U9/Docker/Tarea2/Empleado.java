@@ -23,8 +23,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "numeroEmpleado=" + numeroEmpleado +
+        return  "numeroEmpleado=" + numeroEmpleado +
                 ", apellido='" + apellido + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", extension='" + extension + '\'' +
@@ -32,6 +31,6 @@ public class Empleado {
                 ", codigoOficina=" + codigoOficina +
                 ", puesto='" + puesto + '\'' +
                 ", jefeDe=" + jefeDe +
-                '}';
+                "\n";
     }
 }

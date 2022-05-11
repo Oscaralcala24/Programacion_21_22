@@ -36,7 +36,7 @@ public class ADClassicModels {
             ResultSet rs = statement.executeQuery("select * from offices");
 
             while (rs.next()){
-                Oficina o = new Oficina(rs.getString("officeCode"),rs.getString("city"),rs.getString("phone"), rs.getString("adressLine1"),rs.getString("adressLine2"),rs.getString("state"),rs.getString("country"),rs.getString("postalCode"),rs.getString("territory"));
+                Oficina o = new Oficina(rs.getString("officeCode"),rs.getString("city"),rs.getString("phone"), rs.getString("addressLine1"),rs.getString("addressLine2"),rs.getString("state"),rs.getString("country"),rs.getString("postalCode"),rs.getString("territory"));
                 listaOficina.add(o);
             }
 

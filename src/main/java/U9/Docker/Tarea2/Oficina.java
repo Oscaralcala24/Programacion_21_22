@@ -13,12 +13,12 @@ public class Oficina {
 
 
 
-    public Oficina(String officeCode, String city, String phone, String adressLine1, String adressLine2, String state, String country, String postalCode, String territory) {
+    public Oficina(String officeCode, String city, String phone, String addressLine1, String addressLine2, String state, String country, String postalCode, String territory) {
         this.codigoOficina = officeCode;
         this.ciudad = city;
         this.telefono = phone;
-        this.direccion1 = adressLine1;
-        this.direccion2 = adressLine2;
+        this.direccion1 = addressLine1;
+        this.direccion2 = addressLine2;
         this.estadoCiudad = state;
         this.pais = country;
         this.codigoPostal = postalCode;
@@ -27,8 +27,7 @@ public class Oficina {
 
     @Override
     public String toString() {
-        return "Oficina{" +
-                "codigoOficina=" + codigoOficina +
+        return  "codigoOficina=" + codigoOficina +
                 ", ciudad='" + ciudad + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", direccion1='" + direccion1 + '\'' +
@@ -37,6 +36,6 @@ public class Oficina {
                 ", pais='" + pais + '\'' +
                 ", codigoPostal='" + codigoPostal + '\'' +
                 ", territorio='" + territorio + '\'' +
-                '}';
+                "\n";
     }
 }
