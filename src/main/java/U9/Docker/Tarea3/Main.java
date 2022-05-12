@@ -15,17 +15,29 @@ public class Main {
             respuesta = sc.nextInt();
             switch (respuesta){
                 case 1 :
-                    GestionarDatosCliente.insertarCliente();
+                    GestionarDatosCliente.insertarCliente();break;
                 case 2 :
                     System.out.println("Dime numero del empleado: ");
                     int numEmple = sc.nextInt();
+                    sc.nextLine();;
                     System.out.println("Dime numero del cliente: ");
                     int numClien = sc.nextInt();
-                    GestionarRelacionEmpleClien.asignarEmpleadoCLiente(numEmple,numClien);
+                    GestionarRelacionEmpleClien.asignarEmpleadoCLiente(numEmple,numClien);break;
                 case 3 :
-                    anadirProductoPedido();
+                    System.out.println("Dime numero del producto: ");
+                    String numProducto = sc.next();
+                    System.out.println("Dime numero del pedido: ");
+                    int numPedido = sc.nextInt();
+                    sc.nextLine();;
+                    System.out.println("Dime cantidad del producto: ");
+                    int cantidadProducto =sc.nextInt();
+                    sc.nextLine();;
+                    GestionarProducto.anadirProductoPedido(numProducto,numPedido,cantidadProducto);break;
                 case 4 :
-                    mostrarDetallePedido();
+                    System.out.println("Dime numero del pedido: ");
+                    int numPedido1 = sc.nextInt();
+                    sc.nextLine();;
+                    DetallePedido.mostrarDetallePedido(numPedido1);break;
 
             }
         }while(respuesta!=5);
@@ -35,10 +47,8 @@ public class Main {
 
 
 
-    private static void anadirProductoPedido() {
-    }
 
-    private static void mostrarDetallePedido() {
-    }
+
+
 
 }

@@ -9,6 +9,7 @@ public class GestionarDatosCliente {
         Scanner sc = new Scanner(System.in);
         System.out.println("Customer number: ");
         int customerNumber = sc.nextInt();
+        sc.nextLine();
         System.out.println("Customer name: ");
         String customerName = sc.nextLine();
         System.out.println("Customer last name: ");
@@ -31,12 +32,13 @@ public class GestionarDatosCliente {
         String country = sc.nextLine();;
         System.out.println("Customer credit limit: ");
         double creditLimit = sc.nextDouble();
+        sc.nextLine();;
         try {
             Connection c = ConexionBBDD.getConnection();
-            PreparedStatement statement = c.prepareStatement("INSERT INTO 'customers' " +
-                    "(`customerNumber`, `customerName`, `contactLastName`, `contactFirstName`," +
-                    "`phone`, `addressLine1`, `addressLine2`, `city`," +
-                    "`state`, `postalCode`, `country`,,'creditLimit') " +
+            PreparedStatement statement = c.prepareStatement("INSERT INTO customers " +
+                    "(customerNumber, customerName, contactLastName, contactFirstName," +
+                    "phone, addressLine1, addressLine2, city," +
+                    "state, postalCode, country,creditLimit) " +
                     "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
             statement.setQueryTimeout(30);
             statement.setInt(1,customerNumber);
@@ -51,9 +53,9 @@ public class GestionarDatosCliente {
             statement.setString(10,postalCode);
             statement.setString(11,country);
             statement.setDouble(12,creditLimit);
-            statement.executeQuery();
+            statement.executeUpdate();
 
-
+            c.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
