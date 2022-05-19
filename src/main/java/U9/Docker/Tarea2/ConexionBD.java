@@ -18,4 +18,14 @@ public class ConexionBD {
         }
         return con;
     }
+
+    public static void closeConnection(){
+        try {
+            if (con!= null){
+                con.close();
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }

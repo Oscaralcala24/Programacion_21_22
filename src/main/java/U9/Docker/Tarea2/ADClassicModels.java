@@ -11,8 +11,9 @@ public class ADClassicModels {
 
     public List<Empleado> getEmpleados() {
         List<Empleado> listaEmpleados = new ArrayList<>();
+        Connection c;
         try {
-            Connection c = ConexionBD.getConnection();
+            c = ConexionBD.getConnection();
             Statement statement = c.createStatement();
             statement.setQueryTimeout(30);
             ResultSet rs = statement.executeQuery("select * from employees");
