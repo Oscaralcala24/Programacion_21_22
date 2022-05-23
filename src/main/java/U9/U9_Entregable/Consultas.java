@@ -30,7 +30,7 @@ public class Consultas {
                 System.out.println("/////////////////////////////////////////////////");
 
             }
-            ConexionDB.closeConnection();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class Consultas {
                 System.out.println("Cantidad del pago: "+ rs.getDouble("amount"));
                 System.out.println("/////////////////////////////////////////////////");
             }
-            ConexionDB.closeConnection();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -78,7 +78,6 @@ public class Consultas {
                 System.out.println("Precio : "+ rs.getDouble("buyPrice"));
                 System.out.println("/////////////////////////////////////////////////");
             }
-            ConexionDB.closeConnection();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

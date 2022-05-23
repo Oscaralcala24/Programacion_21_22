@@ -9,5 +9,6 @@ public class Main {
         Consultas.informeCategoria();
         Transacciones.insertarEmpleadoCliente();
         Transacciones.insertarNuevaOficina();
+        ConexionDB.closeConnection();
     }
 }
