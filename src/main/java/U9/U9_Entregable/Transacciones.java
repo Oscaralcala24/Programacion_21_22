@@ -19,6 +19,7 @@ public class Transacciones {
             preparedStatement.setString(1,"5");
             preparedStatement.executeUpdate();
             c.commit();
+
         } catch (SQLException e) {
             e.printStackTrace();
             try{
